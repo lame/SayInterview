@@ -1,0 +1,30 @@
+{
+  "name": "say_media",
+  "version": "0.0.0",
+  "description": "Say Media interview code base",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rkk09c/SayInterview.git"
+  },
+  "keywords": [
+    "Say",
+    "Media"
+  ],
+  "author": "Ryan Kuhl <rkk09c@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rkk09c/SayInterview/issues"
+  },
+  "homepage": "https://github.com/rkk09c/SayInterview#readme",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-serve": "^0.1.6"
+  }
+}
