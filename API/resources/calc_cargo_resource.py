@@ -32,7 +32,7 @@ class CalcCargo(Resource):
             for count in range(in_data['minivan_count']):
                 vehicles_list.append(MiniVan())
         if 'cargo_van_count' in in_data:
-            for count in range(in_data['cargo_can_count']):
+            for count in range(in_data['cargo_van_count']):
                 vehicles_list.append(CargoVan())
 
         tup = self.calc_cargo(remainder_weight, vehicles_list)
@@ -78,7 +78,7 @@ class SportsCar(Vehicle):
 
     def __init__(self):
         super().__init__()
-        self.vehicle_type = 'SportsCar'
+        self.vehicle_type = 'Sports Car'
         self.weight_limit = 100
 
 
@@ -86,7 +86,7 @@ class FamilyCar(Vehicle):
 
     def __init__(self):
         super().__init__()
-        self.vehicle_type = 'FamilyCar'
+        self.vehicle_type = 'Family Car'
         self.weight_limit = 300
 
 
@@ -102,7 +102,7 @@ class MiniVan(Vehicle):
 
     def __init__(self):
         super().__init__()
-        self.vehicle_type = 'MiniVan'
+        self.vehicle_type = 'Mini Van'
         self.weight_limit = 200
 
 
@@ -110,6 +110,6 @@ class CargoVan(Vehicle):
 
     def __init__(self):
         super().__init__()
-        self.vehicle_type = 'CargoVan'
+        self.vehicle_type = 'Cargo Van'
         self.weight_limit = 800
 

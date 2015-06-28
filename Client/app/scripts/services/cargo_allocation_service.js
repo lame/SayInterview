@@ -6,13 +6,13 @@
     function cargoAllocationService($http){
 
         var cargoAllocationService = {
-            calcCargo: calcCargo,
+            postJson: postJson,
         };
         return cargoAllocationService;
 
         function postJson(in_data){
             var url = "http://localhost:5000/api/calc_cargo";
-            return $http.post(url, data);
+            return $http.post(url, in_data)
         }
 
     }

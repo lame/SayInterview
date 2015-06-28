@@ -9,7 +9,7 @@
     .state('cargo_allocation', {
       url:'/cargo_allocation',
       templateUrl: 'views/cargo_allocation_view.html',
-      controller: 'CargoAllocation'
+      controller: 'CargoAllocationController'
     })
 
     .state('landing', {

@@ -10,71 +10,91 @@
                     You will retrieve a total weight carried for each vehicle starting with the vehicle that has the smallest carrying capacity and finishing with the vehicle that has the largest carrying capacity, in addition to any remainder weight that was not available to be carried by the fleet.
                 </p>
             </center><br>
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3">
-                    <div class="input-group">
-                        <span class="input-group-addon" id="sizing-addon2">Sports Cars</span>
-                        <input autofocus="autofocus"
-                               type="text"
-                               class="form-control"
-                               ng-model="vm.data.sports_car_count"
-                               placeholder="Enter Total Number of Sports Cars"/>
+            <form class="cargo_allocation_form">
+              <div class="row">
+                  <div class="col-md-6 col-md-offset-3">
+                      <div class="input-group">
+                          <span class="input-group-addon" id="sizing-addon2">Sports Cars</span>
+                          <input autofocus="autofocus"
+                                 type="text"
+                                 class="form-control"
+                                 ng-model="vm.data.sports_car_count"
+                                 placeholder="Enter Total Number of Sports Cars"/>
 
-                    </div><br>
-                    <div class="input-group">
-                        <span class="input-group-addon" id="sizing-addon2">Family Cars</span>
-                        <input autofocus="autofocus"
-                               type="text"
-                               class="form-control"
-                               ng-model="vm.data.family_car_count"
-                               placeholder="Enter Total Number of Family Cars"/>
+                      </div><br>
+                      <div class="input-group">
+                          <span class="input-group-addon" id="sizing-addon2">Family Cars</span>
+                          <input autofocus="autofocus"
+                                 type="text"
+                                 class="form-control"
+                                 ng-model="vm.data.family_car_count"
+                                 placeholder="Enter Total Number of Family Cars"/>
 
-                    </div><br>
-                    <div class="input-group">
-                        <span class="input-group-addon" id="sizing-addon2">Trucks</span>
-                        <input autofocus="autofocus"
-                               type="text"
-                               class="form-control"
-                               ng-model="vm.data.truck_count"
-                               placeholder="Enter Total Number of Trucks"/>
+                      </div><br>
+                      <div class="input-group">
+                          <span class="input-group-addon" id="sizing-addon2">Trucks</span>
+                          <input autofocus="autofocus"
+                                 type="text"
+                                 class="form-control"
+                                 ng-model="vm.data.truck_count"
+                                 placeholder="Enter Total Number of Trucks"/>
 
-                    </div><br>
-                    <div class="input-group">
-                        <span class="input-group-addon" id="sizing-addon2">Minivans</span>
-                        <input autofocus="autofocus"
-                               type="text"
-                               class="form-control"
-                               ng-model="vm.data.minivan_count"
-                               placeholder="Enter Total Number of Minivans"/>
+                      </div><br>
+                      <div class="input-group">
+                          <span class="input-group-addon" id="sizing-addon2">Minivans</span>
+                          <input autofocus="autofocus"
+                                 type="text"
+                                 class="form-control"
+                                 ng-model="vm.data.minivan_count"
+                                 placeholder="Enter Total Number of Minivans"/>
 
-                    </div><br>
-                    <div class="input-group">
-                        <span class="input-group-addon" id="sizing-addon2">Cargo Vans</span>
-                        <input autofocus="autofocus"
-                               type="text"
-                               class="form-control"
-                               ng-model="vm.data.cargo_van_count"
-                               placeholder="Enter Total Number of Cargo Vans"/>
+                      </div><br>
+                      <div class="input-group">
+                          <span class="input-group-addon" id="sizing-addon2">Cargo Vans</span>
+                          <input autofocus="autofocus"
+                                 type="text"
+                                 class="form-control"
+                                 ng-model="vm.data.cargo_van_count"
+                                 placeholder="Enter Total Number of Cargo Vans"/>
 
-                    </div><br>
-                    <div class="input-group">
-                        <span class="input-group-addon" id="sizing-addon2">Total Weight</span>
-                        <input autofocus="autofocus"
-                               type="text"
-                               class="form-control"
-                               ng-model="vm.data.total_weight"
-                               placeholder="Enter Total Weight"/>
+                      </div><br>
+                      <div class="input-group">
+                          <span class="input-group-addon" id="sizing-addon2">Total Weight</span>
+                          <input autofocus="autofocus"
+                                 type="text"
+                                 class="form-control"
+                                 ng-model="vm.data.total_weight"
+                                 placeholder="Enter Total Weight"/>
 
-                    </div><br>
-                    <span class="input-group-btn">
-                        <button class="btn btn-default"
-                                type="submit"
-                                ng-click="vm.calcCargo(vm.data.total_weight, vm.data.sports_car_count, vm.data.family_car_count, vm.data.truck_count, vm.data.minivan_count, vm.data.cargo_van_count)">
-                            Search
-                        </button>
-                    </span>
-                </div>
-            </div>
+                      </div><br>
+                      <span class="input-group-btn">
+                          <button class="btn btn-default"
+                                  type="submit"
+                                  ng-click="vm.calcCargo(vm.data)">
+                            Calculate
+                          </button>
+                      </span>
+                  </div>
+              </div>
+            </form>
         </div>
     </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+          <center>
+            Results:
+          </center>
+        </div>
+        <table class="table table-bordered" ng-repeat="match in vm.response.message track by $index">
+          <tr>
+            <td>
+              <center>
+                <span>{{match}}</span>
+              </center>
+            </td>
+          </tr>
+        </table>
+    </div>
+
 </div>
