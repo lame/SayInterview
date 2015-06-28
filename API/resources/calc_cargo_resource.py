@@ -47,8 +47,8 @@ class CalcCargo(Resource):
                            })
 
     def calc_cargo(self, remainder_weight, vehicles_list):
-        for vehicle in vahicles_list:
-            if remiander_weight >= vehicle.weight_limit:
+        for vehicle in vehicles_list:
+            if remainder_weight >= vehicle.weight_limit:
                 remainder_weight -= vehicle.weight_limit
                 vehicle.weight_used = vehicle.weight_limit
             else:
