@@ -19,32 +19,27 @@ class CalcCargo(Resource):
                     'message': 'Total weight not included'}
             return jsonify(resp)
 
-        for x in in_data:
-            if x == 'sports_car_count':
-                for count in range(in_data[x]):
-                    vehicle_list.append(SportsCar())
-            elif x == 'family_car_count':
-                for count in range(in_data[x]):
-                    vehicle_list.append(FamilyCar())
-            elif x == 'truck_count':
-                for count in range(in_data[x]):
-                    vehicle_list.append(Truck())
-            elif x == 'minivan_count':
-                for count in range(in_data[x]):
-                    vehicle_list.append(MiniVan())
-            elif x == 'cargo_van_count':
-                for count in range(in_data[x]):
-                    vehicle_list.append(CargoVan())
-            else:
-                resp = { 'status_code': 500,
-                         'message': 'unrecognized value {0}'.format(x)
-                       }
-                return jsonify(resp)
+        if 'sports_car_count' in in_data:
+            for count in range(in_data['sports_car_count']):
+                vehicles_list.append(SportsCar())
+        if 'family_car_count'in in_data:
+            for count in range(in_data['family_car_count']):
+                vehicles_list.append(FamilyCar())
+        if 'truck_count' in in_data:
+            for count in range(in_data['truck_count']):
+                vehicles_list.append(Truck())
+        if 'minivan_count' in in_data:
+            for count in range(in_data['minivan_count']):
+                vehicles_list.append(MiniVan())
+        if 'cargo_van_count' in in_data:
+            for count in range(in_data['cargo_can_count']):
+                vehicles_list.append(CargoVan())
 
-            tup = self.calc_cargo(remainder_weight, vehicles_list)
-            return jsonify({'status_code': 200,
-                            'message': self.format_output(total_weight, tup[0], tup[1])
-                           })
+        tup = self.calc_cargo(remainder_weight, vehicles_list)
+        print(self.format_output(total_weight, tup[0], tup[1]))
+        return jsonify({'status_code': 200,
+                        'message': self.format_output(total_weight, tup[0], tup[1])
+                      })
 
     def calc_cargo(self, remainder_weight, vehicles_list):
         for vehicle in vehicles_list:
@@ -63,6 +58,7 @@ class CalcCargo(Resource):
         for vehicle in vehicles_list:
             format_lst.append('a {0} with {1} lbs'.format(vehicle.vehicle_type, vehicle.weight_used))
         format_lst.append('we have {0} lbs of cargo left over'.format(remainder_weight))
+        print(format_lst)
         return format_lst
 
 
