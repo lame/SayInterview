@@ -4,6 +4,7 @@ Flask-Cors==2.0.1
 Flask-RESTful==0.3.3
 itsdangerous==0.24
 Jinja2==2.7.3
+lxml==3.4.4
 MarkupSafe==0.23
 pytz==2015.4
 six==1.9.0

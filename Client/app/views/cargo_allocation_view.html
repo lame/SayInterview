@@ -6,8 +6,8 @@
             </h2><br>
             <center>
                 <p>
-                    Please enter the total weight that is being carried, along with the total count of each vehicle in the fleet. <br>
-                    You will retrieve a total weight carried for each vehicle starting with the vehicle that has the smallest carrying capacity and finishing with the vehicle that has the largest carrying capacity, in addition to any remainder weight that was not available to be carried by the fleet.
+                    Please enter the total weight that is being carried, along with the total count of each vehicle in the fleet. <br><br>
+                    You will retrieve a total weight carried for each vehicle starting with the vehicle that has the smallest carrying capacity and finishing with the vehicle that has the largest carrying capacity, in addition to any remainder weight that was not able to be carried by the fleet.
                 </p>
             </center><br>
             <form class="cargo_allocation_form">
@@ -19,7 +19,7 @@
                                  type="text"
                                  class="form-control"
                                  ng-model="vm.data.sports_car_count"
-                                 placeholder="Enter Total Number of Sports Cars"/>
+                                 placeholder="Enter Total Number of Sports Cars (100 lbs)"/>
 
                       </div><br>
                       <div class="input-group">
@@ -28,7 +28,7 @@
                                  type="text"
                                  class="form-control"
                                  ng-model="vm.data.family_car_count"
-                                 placeholder="Enter Total Number of Family Cars"/>
+                                 placeholder="Enter Total Number of Family Cars (300 lbs)"/>
 
                       </div><br>
                       <div class="input-group">
@@ -37,7 +37,7 @@
                                  type="text"
                                  class="form-control"
                                  ng-model="vm.data.truck_count"
-                                 placeholder="Enter Total Number of Trucks"/>
+                                 placeholder="Enter Total Number of Trucks (1500 lbs)"/>
 
                       </div><br>
                       <div class="input-group">
@@ -46,7 +46,7 @@
                                  type="text"
                                  class="form-control"
                                  ng-model="vm.data.minivan_count"
-                                 placeholder="Enter Total Number of Minivans"/>
+                                 placeholder="Enter Total Number of Minivans (200 lbs)"/>
 
                       </div><br>
                       <div class="input-group">
@@ -55,7 +55,7 @@
                                  type="text"
                                  class="form-control"
                                  ng-model="vm.data.cargo_van_count"
-                                 placeholder="Enter Total Number of Cargo Vans"/>
+                                 placeholder="Enter Total Number of Cargo Vans (800 lbs)"/>
 
                       </div><br>
                       <div class="input-group">
@@ -64,7 +64,7 @@
                                  type="text"
                                  class="form-control"
                                  ng-model="vm.data.total_weight"
-                                 placeholder="Enter Total Weight"/>
+                                 placeholder="Enter Total Weight in lbs"/>
 
                       </div><br>
                       <span class="input-group-btn">

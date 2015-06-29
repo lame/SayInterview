@@ -36,7 +36,6 @@ class CalcCargo(Resource):
                 vehicles_list.append(CargoVan())
 
         tup = self.calc_cargo(remainder_weight, vehicles_list)
-        print(self.format_output(total_weight, tup[0], tup[1]))
         return jsonify({'status_code': 200,
                         'message': self.format_output(total_weight, tup[0], tup[1])
                       })
