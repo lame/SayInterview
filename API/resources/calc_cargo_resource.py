@@ -76,7 +76,7 @@ class Vehicle(object):
 class SportsCar(Vehicle):
 
     def __init__(self):
-        super().__init__()
+        super(SportsCar, self).__init__()
         self.vehicle_type = 'Sports Car'
         self.weight_limit = 100
 
@@ -84,7 +84,7 @@ class SportsCar(Vehicle):
 class FamilyCar(Vehicle):
 
     def __init__(self):
-        super().__init__()
+        super(FamilyCar, self).__init__()
         self.vehicle_type = 'Family Car'
         self.weight_limit = 300
 
@@ -92,7 +92,7 @@ class FamilyCar(Vehicle):
 class Truck(Vehicle):
 
     def __init__(self):
-        super().__init__()
+        super(Truck, self).__init__()
         self.vehicle_type = 'Truck'
         self.weight_limit = 1500
 
@@ -100,7 +100,7 @@ class Truck(Vehicle):
 class MiniVan(Vehicle):
 
     def __init__(self):
-        super().__init__()
+        super(MiniVan, self).__init__()
         self.vehicle_type = 'Mini Van'
         self.weight_limit = 200
 
@@ -108,7 +108,6 @@ class MiniVan(Vehicle):
 class CargoVan(Vehicle):
 
     def __init__(self):
-        super().__init__()
+        super(CargoVan, self).__init__()
         self.vehicle_type = 'Cargo Van'
         self.weight_limit = 800
-
