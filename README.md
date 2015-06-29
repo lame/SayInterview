@@ -100,16 +100,16 @@ OUTPUT:
 
 ```
 
-## How to Run
+## Cargo Allocation Usage
 1. Clone the rpository from [GitHub](https://github.com/rkk09c/TrueCarInterview)
 2. Spin up API:
-  1. Create Python3 Environment:
-       * Make sure you have Python3.4 installed, if not visit [Python installation documentation](https://www.python.org/downloads/) and download the latest version of Python3
+  1. Create Python2.x Environment:
+       * Make sure you have Python2.x installed, if not visit [Python installation documentation](https://www.python.org/downloads/) and download the latest version of Python2
        * Naviget to ```SayInterview``` root directory
-       * Create a Python3 virtualenvironment:
+       * Create a Python2 virtualenv:
 
            ```
-           python3 -m venv env
+           virtualenv -p path/to/python2.7 env
            ```
 
        * Start the virtual environment with:
@@ -121,13 +121,13 @@ OUTPUT:
        * Install application requirements to that virtual machine:
 
            ```
-           pip3.4 install -r requirements.txt
+           pip install -r requirements.txt
            ```
 
    2. Start the application in the foreground as follows:
 
        ```
-       python3 API/run.py
+       python API/run.py
        ```
 
 3. Spin up the Client:
@@ -160,8 +160,30 @@ OUTPUT:
 
    6. Local web server is now active, navigate to the website on the test server at ```http://localhost:9000/app/index.html```
 
+## Scripts Usage
+
+1. Activate aforementioned python2 virtualenv.
+
+2. Navigate to '/SayInterview/scripts'
+
+3. Invoke python2 repl
+    - Import modules:
+
+      ```python
+      from dom_api import change_to_block_quote
+      from primes import get_primes, fermat
+      from pairs import get_pairs
+      ```
+    - Usage:
+
+      ```python
+      altered_page = change_to_block_quote('local_html_file.html')
+      prime_numbers = get_primes()  # change to any amount of primes by passing in int parameter
+      mostly_primes = fermat()  # uses fermat's little theorem, very fast, only partly accurate
+      pairs = get_pairs([-1, 0, 1, 2], 3)  # can be any integer array and desired output
+      ```
 
 ## Comments
-
+_ Application was moved over to python2 in order to maintain a uniform version. lxml is partly broken for python3 in the tostring() method.
 - Please note that the decision to use a python API as opposed to doing all logic for the object oriented question ins Javascript was done due to python/angular being the stack for Say.
 - Please note special instillation instructions for the lxml package at the [lxml documentation page](http://lxml.de/installation.html)

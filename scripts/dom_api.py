@@ -1,4 +1,4 @@
-from lxml import etree, html
+from lxml import etree
 
 #  MUST USE PYTHON 2.x, libxml in python3 breaks iteration and tostring methods
 def change_to_block_quote(page):
