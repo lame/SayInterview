@@ -1,0 +1,100 @@
+<div ng-controller="CargoAllocationController as vm">
+    <div class="jumbotron">
+        <div class="container">
+            <h2>
+                <center>Can your convoy carry the weight?</center>
+            </h2><br>
+            <center>
+                <p>
+                    Please enter the total weight that is being carried, along with the total count of each vehicle in the fleet. <br><br>
+                    You will retrieve a total weight carried for each vehicle starting with the vehicle that has the smallest carrying capacity and finishing with the vehicle that has the largest carrying capacity, in addition to any remainder weight that was not able to be carried by the fleet.
+                </p>
+            </center><br>
+            <form class="cargo_allocation_form">
+              <div class="row">
+                  <div class="col-md-6 col-md-offset-3">
+                      <div class="input-group">
+                          <span class="input-group-addon" id="sizing-addon2">Sports Cars</span>
+                          <input autofocus="autofocus"
+                                 type="text"
+                                 class="form-control"
+                                 ng-model="vm.data.sports_car_count"
+                                 placeholder="Enter Total Number of Sports Cars (100 lbs)"/>
+
+                      </div><br>
+                      <div class="input-group">
+                          <span class="input-group-addon" id="sizing-addon2">Family Cars</span>
+                          <input autofocus="autofocus"
+                                 type="text"
+                                 class="form-control"
+                                 ng-model="vm.data.family_car_count"
+                                 placeholder="Enter Total Number of Family Cars (300 lbs)"/>
+
+                      </div><br>
+                      <div class="input-group">
+                          <span class="input-group-addon" id="sizing-addon2">Trucks</span>
+                          <input autofocus="autofocus"
+                                 type="text"
+                                 class="form-control"
+                                 ng-model="vm.data.truck_count"
+                                 placeholder="Enter Total Number of Trucks (1500 lbs)"/>
+
+                      </div><br>
+                      <div class="input-group">
+                          <span class="input-group-addon" id="sizing-addon2">Minivans</span>
+                          <input autofocus="autofocus"
+                                 type="text"
+                                 class="form-control"
+                                 ng-model="vm.data.minivan_count"
+                                 placeholder="Enter Total Number of Minivans (200 lbs)"/>
+
+                      </div><br>
+                      <div class="input-group">
+                          <span class="input-group-addon" id="sizing-addon2">Cargo Vans</span>
+                          <input autofocus="autofocus"
+                                 type="text"
+                                 class="form-control"
+                                 ng-model="vm.data.cargo_van_count"
+                                 placeholder="Enter Total Number of Cargo Vans (800 lbs)"/>
+
+                      </div><br>
+                      <div class="input-group">
+                          <span class="input-group-addon" id="sizing-addon2">Total Weight</span>
+                          <input autofocus="autofocus"
+                                 type="text"
+                                 class="form-control"
+                                 ng-model="vm.data.total_weight"
+                                 placeholder="Enter Total Weight in lbs"/>
+
+                      </div><br>
+                      <span class="input-group-btn">
+                          <button class="btn btn-default"
+                                  type="submit"
+                                  ng-click="vm.calcCargo(vm.data)">
+                            Calculate
+                          </button>
+                      </span>
+                  </div>
+              </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+          <center>
+            Results:
+          </center>
+        </div>
+        <table class="table table-bordered" ng-repeat="match in vm.response.message track by $index">
+          <tr>
+            <td>
+              <center>
+                <span>{{match}}</span>
+              </center>
+            </td>
+          </tr>
+        </table>
+    </div>
+
+</div>

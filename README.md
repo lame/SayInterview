@@ -1,5 +1,7 @@
 # Say Media Interview Questions
 ￼
+## Questions
+
 ### Prime Numbers
 
 - Write a function to print out the first 100 prime numbers.
@@ -97,3 +99,69 @@ OUTPUT:
     we have 1156 lbs of cargo left over
 
 ```
+
+## How to Run
+1. Clone the rpository from [GitHub](https://github.com/rkk09c/TrueCarInterview)
+2. Spin up API:
+  1. Create Python3 Environment:
+       * Make sure you have Python3.4 installed, if not visit [Python installation documentation](https://www.python.org/downloads/) and download the latest version of Python3
+       * Naviget to ```SayInterview``` root directory
+       * Create a Python3 virtualenvironment:
+
+           ```
+           python3 -m venv env
+           ```
+
+       * Start the virtual environment with:
+
+           ```
+           source env/bin/activate
+           ```
+
+       * Install application requirements to that virtual machine:
+
+           ```
+           pip3.4 install -r requirements.txt
+           ```
+
+   2. Start the application in the foreground as follows:
+
+       ```
+       python3 API/run.py
+       ```
+
+3. Spin up the Client:
+   1. Make sure appropriate packages are installed:
+       * Please see [NPM Download and Instillation Guide](https://nodejs.org) for instillation help with NPM
+       * Install Bower:
+
+           ```
+           npm install bower #sudo may be necessary depending on environment
+           ```
+
+   2. In a new terminal, navigate to ```SayInterview/Client```
+   3. Install all NPM dependencies:
+
+       ```
+       npm install #sudo may be necessary depending on environment
+       ```
+
+   4. Install all Bower dependencies:
+
+       ```
+       bower install
+       ```
+
+   5. Launch test server:
+
+       ```
+       grunt serve
+       ```
+
+   6. Local web server is now active, navigate to the website on the test server at ```http://localhost:9000/app/index.html```
+
+
+## Comments
+
+- Please note that the decision to use a python API as opposed to doing all logic for the object oriented question ins Javascript was done due to python/angular being the stack for Say.
+- Please note special instillation instructions for the lxml package at the [lxml documentation page](http://lxml.de/installation.html)
